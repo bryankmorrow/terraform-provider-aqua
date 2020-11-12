@@ -1,0 +1,9 @@
+
+.idea
+
+*.terraform
+*.tfstate
+*.json
+*.backup
+*crash.log
+*darwin_amd64
