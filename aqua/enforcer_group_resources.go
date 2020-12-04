@@ -195,16 +195,16 @@ func resourceEnforcerGroupCreate(d *schema.ResourceData, m interface{}) error {
 
 	// Get the Orchestrator
 	orch := client.EnforcerOrchestrator{
-		Type:           d.Get("type").(string),
+		Type: d.Get("type").(string),
 	}
 	// Get the gateways
 	g := d.Get("gateways").([]interface{})
 	// get the required elements
 	group := client.EnforcerGroup{
-		ID:          d.Get("group_id").(string),
-		Logicalname: d.Get("logical_name").(string),
-		Type:        d.Get("type").(string),
-		Gateways:    convertStringArr(g),
+		ID:           d.Get("group_id").(string),
+		Logicalname:  d.Get("logical_name").(string),
+		Type:         d.Get("type").(string),
+		Gateways:     convertStringArr(g),
 		Orchestrator: orch,
 	}
 
@@ -245,10 +245,10 @@ func resourceEnforcerGroupUpdate(d *schema.ResourceData, m interface{}) error {
 		}
 		// get the required elements
 		group := client.EnforcerGroup{
-			ID:          d.Get("group_id").(string),
-			Logicalname: d.Get("logical_name").(string),
-			Type:        d.Get("type").(string),
-			Gateways:    convertStringArr(d.Get("prefixes").([]interface{})),
+			ID:           d.Get("group_id").(string),
+			Logicalname:  d.Get("logical_name").(string),
+			Type:         d.Get("type").(string),
+			Gateways:     convertStringArr(d.Get("prefixes").([]interface{})),
 			Orchestrator: orch,
 		}
 		err := ac.UpdateEnforcerGroup(group)

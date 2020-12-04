@@ -7,12 +7,6 @@ terraform {
   }
 }
 
-provider "aqua" {
-  user = "user"
-  aqua_url = "http://aqua-url"
-  password = "password"
-}
-
 resource "aqua_access_management_roles" "terraform-permissions" {
   name = "Terraform"
   description = "Terraform updated Role"
